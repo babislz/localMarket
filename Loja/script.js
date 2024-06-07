@@ -1,14 +1,3 @@
-// Declaração da variável produtos fora do escopo do evento para torná-la global
-let produtos;
-
-window.onload = function () {
-  var storedUser = localStorage.getItem("usuario");
-  var user = JSON.parse(storedUser);
-  document.getElementById("user").textContent = user.name;
-  document.getElementById("perfil").textContent = user.name;
-  document.getElementById("idPerfil").textContent = user.id;
-};
-
 document.addEventListener("DOMContentLoaded", function () {
   fetch("../Dados/loja.json")
     .then((response) => response.json())
@@ -29,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const cardBody = document.createElement("div");
         cardBody.className = "card-body";
         cardBody.style.display = "flex";
-        
         cardBody.style.flexDirection = "column";
         cardBody.style.justifyContent = "space-between";
         cardBody.style.alignItems = "center";
@@ -39,14 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
         cardTitle.textContent = produto.descricao;
 
         const priceAndBt = document.createElement("div");
-        priceAndBt.className = "card-price-and-bt"
-        
+        priceAndBt.className = "card-price-and-bt";
         priceAndBt.style.display = "flex";
         priceAndBt.style.flexDirection = "column";
         priceAndBt.style.justifyContent = "flex-end";
         priceAndBt.style.paddingTop = "20px";
         priceAndBt.style.alignItems = "center";
-
 
         const cardText = document.createElement("p");
         cardText.className = "card-text";
@@ -54,13 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const btnAdicionarAoCarrinho = document.createElement("a");
         btnAdicionarAoCarrinho.href = "#";
-        btnAdicionarAoCarrinho.className =
-          "btn btn-primary btn-adicionar-ao-carrinho";
-          btnAdicionarAoCarrinho.style.backgroundColor = "#660033"
+        btnAdicionarAoCarrinho.className = "btn btn-primary btn-adicionar-ao-carrinho";
+        btnAdicionarAoCarrinho.style.backgroundColor = "#1d1d3b";
+        btnAdicionarAoCarrinho.style.padding = "13px";
         btnAdicionarAoCarrinho.textContent = "Adicionar ao Carrinho";
         btnAdicionarAoCarrinho.setAttribute("data-indice", index);
 
-        
         cardBody.appendChild(cardTitle);
         priceAndBt.appendChild(cardText);
         priceAndBt.appendChild(btnAdicionarAoCarrinho);
@@ -74,16 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Erro ao carregar o arquivo JSON", error));
 
-  $("#produtos-container").on(
-    "click",
-    ".btn-adicionar-ao-carrinho",
-    function () {
-      const indexDoProduto = $(this).data("indice");
-      const produtoSelecionado = produtos[indexDoProduto];
-      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-      carrinho.push(produtoSelecionado);
-      localStorage.setItem("carrinho", JSON.stringify(carrinho));
-      alert("Produto adicionado ao carrinho!");
-    }
-  );
+  $("#produtos-container").on("click", ".btn-adicionar-ao-carrinho", function () {
+    const indexDoProduto = $(this).data("indice");
+    const produtoSelecionado = produtos[indexDoProduto];
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    carrinho.push(produtoSelecionado);
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    alert("Produto adicionado ao carrinho!");
+  });
 });

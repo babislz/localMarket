@@ -16,6 +16,9 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
       * {
         box-sizing: border-box;
@@ -23,11 +26,12 @@
         margin: 0;
       }
       body {
+        font-family: "Roboto", sans-serif;
         width: 100vw;
         height: auto;
         overflow-x: hidden;
-        background-color: #20042f;
-        color: white;
+        background-color: #ECECEC;
+        color: black;
       }
       .wrap {
         display: flex;
@@ -45,7 +49,6 @@
         gap: 5px;
       }
       .card {
-        background-color: #f2f2f2;
         border-radius: 10px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         padding: 20px;
@@ -56,11 +59,19 @@
         justify-content: center;
         text-align: center;
         transition: 300ms;
-        background-color: #654c7479;
+        color: black;
+        background-color: #AAABB8;
+      }
+
+      .produtos-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
       }
 
       .card:hover{
         transform:scale(1.07);
+        box-shadow: 0 9px 30px 0 #474787be;
       } 
 
       .card h2 {
@@ -84,9 +95,8 @@
       .card button{
           border: none;
           border-radius: 5px;
-          background-color: blue;
           color: white;
-          background-color: #660033;
+          background-color: #474787;
       }
       #produtos-container{
         display: flex;
@@ -99,8 +109,9 @@
       }
       .nav{
         text-align: center;
-        background-color: #11001c;
-        box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.171);
+        background-color: #1d1d3b;
+        box-shadow: 0 5px 8px 10px rgba(0, 0, 0, 0.13);
+        color: white;
       }
       @media (width <= 900px) {
         .center {
@@ -126,7 +137,7 @@
       <br/>
       <h2>Produtos</h2>
     </div>
-    <div id="produtos-container"></div>
+    <div id="produtos-container" class="produtos-grid"></div>
     <script src="script.js"></script>
   </body>
 </html>
