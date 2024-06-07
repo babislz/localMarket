@@ -18,6 +18,7 @@
     ></script>
     <style>
       * {
+        box-sizing: border-box;
         padding: 0;
         margin: 0;
       }
@@ -25,7 +26,8 @@
         width: 100vw;
         height: auto;
         overflow-x: hidden;
-        padding: 20px;
+        background-color: #20042f;
+        color: white;
       }
       .wrap {
         display: flex;
@@ -42,6 +44,64 @@
         flex-direction: row;
         gap: 5px;
       }
+      .card {
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transition: 300ms;
+        background-color: #654c7479;
+      }
+
+      .card:hover{
+        transform:scale(1.07);
+      } 
+
+      .card h2 {
+        font-family: helvetica;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+          font-family: helvetica;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+      .card img {
+        object-fit: cover;
+        width: 100%;
+        height: 300px;
+        margin-bottom: 20px;
+      }
+      .card button{
+          border: none;
+          border-radius: 5px;
+          background-color: blue;
+          color: white;
+          background-color: #660033;
+      }
+      #produtos-container{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 27px;
+      }
+      #cart{
+        object-fit: cover;
+        width: 35px;
+      }
+      .nav{
+        text-align: center;
+        background-color: #11001c;
+        box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.171);
+      }
       @media (width <= 900px) {
         .center {
           justify-content: center;
@@ -50,23 +110,23 @@
       }
     </style>
   </head>
+
   <body>
-    <a href="../Carrinho/carrinho.html">Ir para carrinho</a>
-    <div>
-      <h5 id="perfil"></h5>
-      <div class="idPerfil">
+    <div class="nav px-3 py-3 m-0 d-flex align-items-center gap-4">
+      <h5 id="perfil" class="p-0 m-0"></h5>
+      <div class="idPerfil p-0">
         Protocolo atual:
-        <p id="idPerfil"></p>
+        <p id="idPerfil" class="p-0 m-0"></p>
       </div>
+      <a class="ms-auto" href="../Carrinho/carrinho.html"><img id="cart" src="../img/svg/cart-shopping-svgrepo-com.svg" alt=""></a>
     </div>
-    <h1>Loja</h1>
-    <p>Bem vindo <span id="user"></span> , vamos as compras!</p>
-    <br />
-    <h2>Produtos</h2>
-    <br />
-    <div class="wrap">
-      <div id="produtos-container" class="row center"></div>
+    <div class="ps-5 pt-4">
+      <h1>Loja</h1>
+      <p>Bem vindo(a) <span id="user"></span> , vamos as compras!</p>
+      <br/>
+      <h2>Produtos</h2>
     </div>
+    <div id="produtos-container"></div>
     <script src="script.js"></script>
   </body>
 </html>

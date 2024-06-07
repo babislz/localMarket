@@ -10,7 +10,6 @@ window.onload = function () {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Fetch dos produtos e armazenamento na variável global
   fetch("../Dados/loja.json")
     .then((response) => response.json())
     .then((data) => {
@@ -20,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
       produtos.forEach((produto, index) => {
         const card = document.createElement("div");
         card.className = "card";
-        card.style.width = "18rem";
-        card.style.marginRight = "10px";
+        card.style.width = "360px";
+        card.style.transition = "300ms";
 
         const imagem = document.createElement("img");
         imagem.src = produto.imagem;
@@ -29,10 +28,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const cardBody = document.createElement("div");
         cardBody.className = "card-body";
+        cardBody.style.display = "flex";
+        
+        cardBody.style.flexDirection = "column";
+        cardBody.style.justifyContent = "space-between";
+        cardBody.style.alignItems = "center";
 
         const cardTitle = document.createElement("h5");
         cardTitle.className = "card-title";
         cardTitle.textContent = produto.descricao;
+
+        const priceAndBt = document.createElement("div");
+        priceAndBt.className = "card-price-and-bt"
+        
+        priceAndBt.style.display = "flex";
+        priceAndBt.style.flexDirection = "column";
+        priceAndBt.style.justifyContent = "flex-end";
+        priceAndBt.style.paddingTop = "20px";
+        priceAndBt.style.alignItems = "center";
+
 
         const cardText = document.createElement("p");
         cardText.className = "card-text";
@@ -42,12 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
         btnAdicionarAoCarrinho.href = "#";
         btnAdicionarAoCarrinho.className =
           "btn btn-primary btn-adicionar-ao-carrinho";
+          btnAdicionarAoCarrinho.style.backgroundColor = "#660033"
         btnAdicionarAoCarrinho.textContent = "Adicionar ao Carrinho";
         btnAdicionarAoCarrinho.setAttribute("data-indice", index);
 
+        
         cardBody.appendChild(cardTitle);
-        cardBody.appendChild(cardText);
-        cardBody.appendChild(btnAdicionarAoCarrinho);
+        priceAndBt.appendChild(cardText);
+        priceAndBt.appendChild(btnAdicionarAoCarrinho);
+        cardBody.appendChild(priceAndBt);
 
         card.appendChild(imagem);
         card.appendChild(cardBody);
@@ -57,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Erro ao carregar o arquivo JSON", error));
 
-  // Manipulador de eventos para o botão "Adicionar ao Carrinho"
   $("#produtos-container").on(
     "click",
     ".btn-adicionar-ao-carrinho",
