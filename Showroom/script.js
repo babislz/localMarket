@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
       produtos = data;
       const produtosContainer = document.getElementById("produtos-container");
 
-      produtos.forEach((produto, index) => {
+      produtos.forEach((produto) => {
         const card = document.createElement("div");
         card.className = "card";
         card.style.width = "360px";
@@ -49,13 +49,4 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     })
     .catch((error) => console.error("Erro ao carregar o arquivo JSON", error));
-
-  $("#produtos-container").on("click", ".btn-adicionar-ao-carrinho", function () {
-    const indexDoProduto = $(this).data("indice");
-    const produtoSelecionado = produtos[indexDoProduto];
-    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    carrinho.push(produtoSelecionado);
-    localStorage.setItem("carrinho", JSON.stringify(carrinho));
-    alert("Produto adicionado ao carrinho!");
-  });
 });

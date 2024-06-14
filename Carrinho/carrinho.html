@@ -18,20 +18,26 @@
         background-color: #1d1d3b;
         box-shadow: 0 5px 8px 10px rgba(0, 0, 0, 0.13);
         color: white;
+        position: fixed;
+        top:0;
+        width: 100%;
       }
       body {
         font-family: "Roboto", sans-serif;
         width: 100vw;
         height: auto;
         overflow-x: hidden;
-        background-image: url(../img/jpeg/perfumes.jpg);
-        background-size: cover;
         color: white;
         text-align: center;
         position: relative;
       }
       a { 
         text-decoration: none;
+      }
+      #btn {
+        padding: 10px;
+        width: 120px;
+        border-radius: 10px;
       }
       #pedido {
         display: none;
@@ -49,15 +55,14 @@
         justify-content: center;
       }
       #carrinho {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; 
         background-color: #141429ec;
         width: 40vw;
-        height: 30vw;
+        height: min-content;
+        min-height: 300px;
         border-radius: 60px;
         box-shadow: 0 5px 11px 15px rgba(223, 223, 223, 0.103);
+        padding: 50px;
+        margin-bottom: 100px;
       }
       #titulo-body{
         padding-top: 70px;
@@ -66,7 +71,33 @@
         object-fit: cover;
         width: 30px;
       }
-      
+      #carrinho-pt2{
+        padding-top: 30px;
+        display: flex;
+        gap: 25px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      #cart-title{
+        padding-top: 30px;
+        display: flex;
+        height: 20%;
+        align-items: center;
+        justify-content: center;
+      }
+      .list-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .list-item button {
+        margin-right: 20px;
+      }
+      #total {
+        padding-top: 50px;
+      }
     </style>
   </head>
   <body>
@@ -75,10 +106,16 @@
     </header>
     <div id="conteudo">
       <div id="carrinho">
-        <h1>Carrinho</h1>
-        <div id="lista"></div>
-        <h3 id="total"></h3>
-        <button onclick="gerarDocumentoWord()">Realizar pedido</button>
+        <div id="cart-title">
+          <h1>Carrinho</h1>
+        </div>
+        <div id="carrinho-pt2">
+          <div>
+            <div id="lista"></div>
+            <h3 id="total"></h3>
+          </div>
+          <button id="btn" onclick="gerarDocumentoWord()"><b>Efetuar pedido</b></button>
+        </div>
       </div>
       <p id="pedido">
         Pedido gerado com sucesso

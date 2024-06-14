@@ -14,51 +14,64 @@
         height: auto;
         color: black;
         display: flex;
+        background-image: url(../img/jpeg/perfumes.jpg);
+        background-size: cover;
         flex-direction: column;
         justify-content: center;
         align-items: center; 
-        padding-top: 250px;
     }
     a { 
         text-decoration: none;
         font-size: 15px;
+        color: #c2a2d4d8;
     }
     input {
       padding: 10px;
       width: 250px;
+      border-radius: 10px;
     }
     #btn {
       padding: 8px;
       width: 80px;
+      border-radius: 10px;
     }
-     #carrinho {
+     #fundo-login {
         display: flex;
+        gap: 25px;
         flex-direction: column;
         justify-content: center;
-        align-items: center; 
-        background-color: #141429ec;
+        align-items: center;
+        background-color: #51517ad8;
         width: 40vw;
         height: 30vw;
         border-radius: 60px;
         box-shadow: 0 5px 11px 15px rgba(223, 223, 223, 0.103);
+        color: white;
       }
-  </style>
+      #body-sec{
+        width: auto;
+        height: auto;
+        padding-top: 170px;
+      }
+  </style>  
   <body>
     <div class="container">
       <div class="error-div" id="error-modal">
         <h3>Credenciais incorretas!!!</h3>
         <button onclick="fecharError()">Fechar</button>
       </div>
-      <div>
-        <h1>Login</h1>
-        <input type="text" placeholder="Insira seu nome" id="nome" />
-        <div style="position: relative;">
-          <input type="password" placeholder="Insira sua senha" id="senha" >
-          <div onclick="showPassword"></div>
+      <div id="body-sec">
+        <div id="fundo-login">
+          <h1>Login</h1>
+          <input type="text" placeholder="Insira seu nome" id="nome" />
+          <div style="position: relative;">
+            <input type="password" placeholder="Insira sua senha" id="senha" >
+            <div onclick="showPassword"></div>
+          </div>
+          <button id="btn" onclick="login()">Entrar</button>
+          <p><a href="../Showroom/showroom.html">Visualizar showroom</a></p>
         </div>
-        <button id="btn" onclick="login()">Entrar</button>
-        <p><a href="../Showroom/showroom.html">Visualizar showroom</a></p>
-        </div>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

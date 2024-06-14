@@ -20,6 +20,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F2F2F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #BDBDBD;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6E6E6E;
+}
+
       * {
         box-sizing: border-box;
         padding: 0;
@@ -33,16 +50,7 @@
         background-color: #ECECEC;
         color: black;
       }
-      .wrap {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: auto;
-        flex-wrap: wrap;
-        padding: 5%;
-      }
+    
       .idPerfil {
         display: flex;
         flex-direction: row;
@@ -52,7 +60,7 @@
         border-radius: 10px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         padding: 20px;
-        width: 400px;
+        width: 20%; 
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -61,12 +69,6 @@
         transition: 300ms;
         color: black;
         background-color: #AAABB8;
-      }
-
-      .produtos-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
       }
 
       .card:hover{
@@ -100,8 +102,15 @@
       }
       #produtos-container{
         display: flex;
-        justify-content: space-around;
+        width: 100%;
         padding-top: 27px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 50px;
+      }
+      #produtos-container div {
+        flex-basis: calc(100% / 4 - 80px);
       }
       #cart{
         object-fit: cover;
@@ -118,7 +127,7 @@
         .center {
           justify-content: center;
           gap: 2vh;
-        }
+        } 
       }
     </style>
   </head>

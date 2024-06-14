@@ -34,15 +34,13 @@
         background-color: #ECECEC;
         color: black;
       }
-      .wrap {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: auto;
-        flex-wrap: wrap;
-        padding: 5%;
+      header{
+        text-align: start;
+        padding-left: 50px;
+        padding: 19px;
+        background-color: #1d1d3b;
+        box-shadow: 0 5px 8px 10px rgba(0, 0, 0, 0.13);
+        color: white;
       }
       .idPerfil {
         display: flex;
@@ -53,7 +51,7 @@
         border-radius: 10px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         padding: 20px;
-        width: 400px;
+        width: 20%; 
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -101,19 +99,23 @@
       }
       #produtos-container{
         display: flex;
-        justify-content: space-around;
+        width: 100%;
         padding-top: 27px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 50px;
+      }
+      #produtos-container div {
+        flex-basis: calc(100% / 4 - 80px);
       }
       #cart{
         object-fit: cover;
         width: 35px;
       }
-      .nav{
-        text-align: center;
-        background-color: #1d1d3b;
-        box-shadow: 0 5px 8px 10px rgba(0, 0, 0, 0.13);
-        color: white;
-        padding: 25px;
+      #shop{
+        object-fit: cover;
+        width: 30px;
       }
       @media (width <= 900px) {
         .center {
@@ -123,21 +125,12 @@
       }
     </style>
   </head>
-
   <body>
-    <div class="nav px-3 py-3 m-0 d-flex align-items-center gap-4">
-      <h5 id="perfil" class="p-0 m-0"></h5>
-      <div class="idPerfil p-0">
-        Protocolo atual:
-        <p id="idPerfil" class="p-0 m-0"></p>
-      </div>
-      <a class="ms-auto" href="../Carrinho/carrinho.html"><img id="cart" src="../img/svg/cart-shopping-svgrepo-com.svg" alt=""></a>
-    </div>
-    <div class="ps-5 pt-4">
-      <h1>Loja</h1>
-      <p>Bem vindo(a) <span id="user"></span> , vamos as compras!</p>
-      <br/>
-      <h2>Produtos</h2>
+    <header>
+      <a class="ms-auto" href="../Loja/loja.html"><img id="shop" src="../img/svg/shop-icon.svg" alt=""></a>
+    </header>
+    <div class="ps-5 pt-5 pb-3">
+      <h2>Nossos produtos</h2> 
     </div>
     <div id="produtos-container" class="produtos-grid"></div>
     <script src="script.js"></script>
