@@ -7,6 +7,32 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.0.1/mammoth.browser.min.js"></script>
     <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      header{
+        text-align: start;
+        padding-left: 50px;
+        padding: 17px;
+        background-color: #1d1d3b;
+        box-shadow: 0 5px 8px 10px rgba(0, 0, 0, 0.13);
+        color: white;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        width: 100vw;
+        height: auto;
+        overflow-x: hidden;
+        background-image: url(../img/jpeg/perfumes.jpg);
+        background-size: cover;
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+      a { 
+        text-decoration: none;
+      }
       #pedido {
         display: none;
         position: absolute;
@@ -14,22 +40,51 @@
         left: 50%;
         transform: translate(-50%, -50%);
         padding: 20px;
-        background-color: green;
         color: #ffff;
         font-size: 1.4rem;
       }
+      #conteudo{
+        padding-top: 135px;
+        display: flex;
+        justify-content: center;
+      }
+      #carrinho {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        background-color: #141429ec;
+        width: 40vw;
+        height: 30vw;
+        border-radius: 60px;
+        box-shadow: 0 5px 11px 15px rgba(223, 223, 223, 0.103);
+      }
+      #titulo-body{
+        padding-top: 70px;
+      }
+      #shop{
+        object-fit: cover;
+        width: 30px;
+      }
+      
     </style>
   </head>
   <body>
-    <a href="../Loja/loja.html">Continuar comprando</a>
-    <h1>Carrinho</h1>
-    <div id="lista"></div>
-    <h3 id="total"></h3>
-    <button onclick="gerarDocumentoWord()">Realizar pedido</button>
-    <p id="pedido">
-      Pedido gerado com sucesso
-      <button id="sc" onclick="successClose()">❌</button>
-    </p>
+    <header>
+      <a class="ms-auto" href="../Loja/loja.html"><img id="shop" src="../img/svg/shop-icon.svg" alt=""></a>
+    </header>
+    <div id="conteudo">
+      <div id="carrinho">
+        <h1>Carrinho</h1>
+        <div id="lista"></div>
+        <h3 id="total"></h3>
+        <button onclick="gerarDocumentoWord()">Realizar pedido</button>
+      </div>
+      <p id="pedido">
+        Pedido gerado com sucesso
+        <button id="sc" onclick="successClose()">❌</button>
+      </p>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

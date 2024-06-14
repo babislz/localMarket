@@ -1,8 +1,15 @@
+
+function fecharError() {
+  document.getElementById("error-modal").style.display = "none";
+  document.getElementById("nome").style.border = "2px solid #909090";
+  document.getElementById("senha").style.border = "2px solid #909090";
+  }
+  
 function login() {
   var nome = $("#nome").val();
   var senha = $("#senha").val();
 
-  if (nome && senha && nome === "admin" && senha === "admin") {
+  if (nome && senha && nome === "admin" && senha === "123456") {
     const user = {
       name: nome,
       dataEntrada: new Date(),
@@ -18,14 +25,7 @@ function login() {
     document.getElementById("senha").style.border = "2px solid lightpink";
   }
 }
-
-function fecharError() {
-  document.getElementById("error-modal").style.display = "none";
-  document.getElementById("nome").style.border = "2px solid #909090";
-  document.getElementById("senha").style.border = "2px solid #909090";
-}
-
-function showPassword() {
+  function showPassword() {
   var inputSenha = document.querySelector("#senha");
   if (inputSenha.getAttribute("type") === "password") {
     inputSenha.setAttribute("type", "text");
