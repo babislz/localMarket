@@ -34,6 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
         priceAndBt.style.paddingTop = "20px";
         priceAndBt.style.alignItems = "center";
 
+        const cardStatus = document.createElement("div");
+        cardStatus.className = "card-status";
+        cardStatus.style.backgroundColor = produto.quantidade>0?"green":"red";
+
         const cardText = document.createElement("p");
         cardText.className = "card-text";
         cardText.textContent = "Preço: $" + produto.preco.toFixed(2);
@@ -41,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cardBody.appendChild(cardTitle);
         priceAndBt.appendChild(cardText);
         cardBody.appendChild(priceAndBt);
+        cardBody.appendChild(cardStatus);
 
         card.appendChild(imagem);
         card.appendChild(cardBody);
