@@ -4,7 +4,7 @@
     "descricao": "Deo Colônia Amburana",
     "imagem": "https://br.loccitaneaubresil.com/dw/image/v2/BGNF_PRD/on/demandware.static/-/Sites-lbr-master-catalog/default/dw4d238051/images/Amburana%20(atualizado)/BROBVS100548%20-%20NOVA.png?sfrm=png",
     "preco": 200.00,
-    "quantidade": true
+    "quantidade": false
   },
 
   {
@@ -36,7 +36,7 @@
     "descricao": "Deo Colônia Nosso Abraço",
     "imagem": "https://br.loccitaneaubresil.com/dw/image/v2/BGNF_PRD/on/demandware.static/-/Sites-lbr-master-catalog/default/dwa2326310/images/Abra%C3%A7o%20-%20Atualizado/BROBVS100631.png?sfrm=png",
     "preco": 164.90,
-    "quantidade": true
+    "quantidade": false
   },
 
   {

@@ -53,24 +53,39 @@
         height: auto;
         padding-top: 170px;
       }
+      .error-div {
+        padding: 30px;
+        margin-bottom: 720px;
+        border-radius: 30px;
+        background-color: rgb(131, 5, 5);
+        color: white;
+      }
+      .error-div button {
+        padding: 7px;
+        border-radius: 10px;
+        font-style: oblique;
+      }
   </style>  
   <body>
     <div class="container">
       <div class="error-div" id="error-modal">
-        <h3>Credenciais incorretas!!!</h3>
-        <button onclick="fecharError()">Fechar</button>
+        <h3>Credenciais incorretas.</h3>
+        <button onclick="fecharError()"><b>Fechar</b></button>
       </div>
       <div id="body-sec">
         <div id="fundo-login">
           <h1>Login</h1>
           <input type="text" placeholder="Insira seu nome" id="nome" />
           <div style="position: relative;">
-            <input type="password" placeholder="Insira sua senha" id="senha" >
-            <div onclick="showPassword"></div>
+            <input type="password" placeholder="Insira sua senha" id="senha">
+            <span class="key" onclick="togglePasswordVisibility()">
+              <i class="fas fa-eye" id="eye-icon"><img src="/img/svg/eye-alt-svgrepo-com.svg" alt=""></i>
+            </span>
           </div>
           <button id="btn" onclick="login()">Entrar</button>
           <p><a href="../Showroom/showroom.html">Visualizar showroom</a></p>
         </div>
+        
       </div>
     </div>
     <script src="script.js"></script>

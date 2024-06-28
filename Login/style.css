@@ -39,10 +39,12 @@ body {
 
 .key {
   position: absolute;
-  top: 2px;
   right: 10px;
-  opacity: 0.6;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
+
 .key:hover {
   cursor: pointer;
   opacity: 1;

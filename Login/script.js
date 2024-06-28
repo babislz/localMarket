@@ -25,11 +25,18 @@ function login() {
     document.getElementById("senha").style.border = "2px solid lightpink";
   }
 }
-  function showPassword() {
-  var inputSenha = document.querySelector("#senha");
-  if (inputSenha.getAttribute("type") === "password") {
-    inputSenha.setAttribute("type", "text");
+function togglePasswordVisibility() {
+  var senhaInput = document.getElementById("senha");
+  var eyeIcon = document.getElementById("eye-icon");
+
+  if (senhaInput.type === "password") {
+    senhaInput.type = "text";
+    eyeIcon.classList.remove("fa-eye");
+    eyeIcon.classList.add("fa-eye-slash");
   } else {
-    inputSenha.setAttribute("type", "password");
+    senhaInput.type = "password";
+    eyeIcon.classList.remove("fa-eye-slash");
+    eyeIcon.classList.add("fa-eye");
   }
 }
+
